@@ -1,0 +1,139 @@
+[gd_scene load_steps=16 format=3 uid="uid://b5wp51evqkm4g"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_xe8sn"]
+[ext_resource type="Texture2D" uid="uid://c7mhhx2axyw2t" path="res://kenney_boardgame-pack/Spritesheets/diceWhite.png" id="2_fmfco"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xulc"]
+atlas = ExtResource("2_fmfco")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc2lk"]
+atlas = ExtResource("2_fmfco")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gb1p"]
+atlas = ExtResource("2_fmfco")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0gwh"]
+atlas = ExtResource("2_fmfco")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcc5w"]
+atlas = ExtResource("2_fmfco")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq2j8"]
+atlas = ExtResource("2_fmfco")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgwby"]
+atlas = ExtResource("2_fmfco")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3145j"]
+atlas = ExtResource("2_fmfco")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbu00"]
+atlas = ExtResource("2_fmfco")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwwkx"]
+atlas = ExtResource("2_fmfco")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ooet"]
+atlas = ExtResource("2_fmfco")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsoyl"]
+atlas = ExtResource("2_fmfco")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_asovd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xulc")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc2lk")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gb1p")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0gwh")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcc5w")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq2j8")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgwby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3145j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbu00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwwkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ooet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsoyl")
+}],
+"loop": true,
+"name": &"Rolling",
+"speed": 5.0
+}]
+
+[node name="dice" type="Node2D"]
+script = ExtResource("1_xe8sn")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5.75, 5.75)
+sprite_frames = SubResource("SpriteFrames_asovd")
+animation = &"Rolling"
+frame = 4
+frame_progress = 0.339033
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.2, 0.2)
